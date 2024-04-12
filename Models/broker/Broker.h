@@ -1,7 +1,8 @@
+#pragma once
 #include<bits/stdc++.h>
 using namespace std;
-
-class Broker {
+#include "../user/User.h"
+class Broker:public User {
 private:
     string name;
     string licenseNumber;
