@@ -1,13 +1,17 @@
 #include<bits/stdc++.h>
 #include"../user/User.h"
-
 using namespace std;
+
+struct PortfolioEntry {
+    int quantity;
+    double price;
+};
 
 class Investor : public User {
 private:
-
+ double invested;
     double balance;
-    unordered_map<string, int> portfolio; // Map symbol to quantity
+    unordered_map<string,PortfolioEntry > portfolio; // Map symbol to quantity
 
 public:
     Investor() { }
@@ -16,7 +20,7 @@ public:
 
     // Function to buy a stock
     void buyStock(const string& , int , double );
-
+void calculateProfit() ;
     // Function to sell a stock
     void sellStock(const string& symbol, int quantity, double price) {
         if (portfolio.find(symbol) == portfolio.end() || portfolio[symbol] < quantity) {

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <../Models/user/User.h>
+#include "../Models/user/User.h"
 using namespace std;
 
 int main() {
@@ -19,10 +19,10 @@ int main() {
         if (option == 1) {
             cout << "You chose Broker\n";
             
-
             // Add broker functionality here
         } else if (option == 2) {
             cout << "You chose Investor\n";
+            
             // Add normal user functionality here
         } else if (option == 3) {
             cout << "Exiting...\n";
