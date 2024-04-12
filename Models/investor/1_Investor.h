@@ -5,14 +5,21 @@ using namespace std;
 struct PortfolioEntry {
     int quantity;
     double price;
+    double avgprice;//also used for setting invested price 
 };
 
 class Investor : public User {
+    
 private:
+
  double invested;
     double balance;
     unordered_map<string,PortfolioEntry > portfolio; // Map symbol to quantity
-
+ double generateRandomPrice() {
+        
+        // Generate a random price between 100 and 200 for demonstration
+        return 100 + (rand() % 90) + static_cast<double>(rand() % 100) / 100;
+    }
 public:
     Investor() { }
     Investor(const string& username, const string& password, double balance)
@@ -32,7 +39,11 @@ void calculateProfit() ;
         portfolio[symbol] -= quantity;
         cout << "Sold " << quantity << " shares of " << symbol << " at $" << price << " each" << endl;
     }
-
+void addbalance(double amount){
+    cout<<"\nCurrent Balance:$"<<balance;
+    balance+=amount;
+    cout<<"\nNew Balance:$"<<balance;
+}
     // Function to display user's portfolio
     void displayPortfolio() {
         cout << "Portfolio for user " << username << ":" << endl;
@@ -41,4 +52,5 @@ void calculateProfit() ;
         }
         cout << "Balance: $" << balance << endl;
     }
+
 };
