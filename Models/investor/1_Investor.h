@@ -18,7 +18,7 @@ private:
     double balance;
     unordered_map<string,PortfolioEntry > portfolio; // Map symbol to quantity
  double generateRandomPrice() {
-        
+        // srand(time(null));
         // Generate a random price between 100 and 200 for demonstration
         return 100 + (rand() % 90) + static_cast<double>(rand() % 100) / 100;
     }
