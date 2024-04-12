@@ -8,7 +8,7 @@ void Investor::buyStock(const string& symbol, int quantity) {
         double price;
         // Check if symbol exists in portfolio, if not add it with initial values
         if (portfolio.find(symbol) == portfolio.end()) {
-  price = generateRandomPrice();
+        price = generateRandomPrice();
       balance-=(price*quantity);invested+=(price*quantity);
               portfolio[symbol].quantity = quantity;
         portfolio[symbol].price = price;

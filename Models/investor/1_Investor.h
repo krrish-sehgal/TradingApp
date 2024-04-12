@@ -33,15 +33,17 @@ public:
         : User(username,password,email),balance(balance) {}
 
     // Function to buy a stock
-    void buyStock(const string& , int , double );
-void calculateProfit() ;
+    void buyStock(const string& , int);
+
+    void calculateProfit() ;
     // Function to sell a stock
     void sellStock(const string& symbol, int quantity);
-void addbalance(double amount){
-    cout<<"\nCurrent Balance:$"<<balance;
-    balance+=amount;
-    cout<<"\nNew Balance:$"<<balance;
-}
+
+    void addbalance(double amount){
+        cout<<"\nCurrent Balance:$"<<balance;
+        balance+=amount;
+        cout<<"\nNew Balance:$"<<balance;
+    }
     // Function to display user's portfolio
     void displayPortfolio() {  cout << "Portfolio for user " << getUsername() << ":" << endl;
         for (const auto& entry : portfolio) {
