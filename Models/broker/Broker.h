@@ -45,4 +45,5 @@ public:
         cout << "License Number: " << licenseNumber << endl;
         cout << "Commission Rate: " << commissionRate << "%" << endl;
     }
+    
 };

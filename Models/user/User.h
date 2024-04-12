@@ -13,8 +13,8 @@ protected:
 public:
     // Constructor
     User() {}
-    User(const string& username, const string& email)
-        : username(username), email(email) {}
+    User(const string& username,const string& password,const string& email)
+        : username(username),password(password), email(email) {}
 
     // Virtual destructor
     virtual ~User() {}
