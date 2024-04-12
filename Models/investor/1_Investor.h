@@ -50,12 +50,14 @@ void addbalance(double amount){
     cout<<"\nNew Balance:$"<<balance;
 }
     // Function to display user's portfolio
-    void displayPortfolio() {
-        cout << "Portfolio for user " << username << ":" << endl;
+    void displayPortfolio() {  cout << "Portfolio for user " << getUsername() << ":" << endl;
         for (const auto& entry : portfolio) {
-            cout << " - " << entry.first << ": " << entry.second << " shares" << endl;
+            const string& symbol = entry.first;
+            const PortfolioEntry& info = entry.second;
+            cout << " - " << symbol << ": " << info.quantity << " shares, Price: $" << info.avgprice << endl;
         }
         cout << "Balance: $" << balance << endl;
+
     }
 
 };
