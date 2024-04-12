@@ -10,6 +10,7 @@ private:
 
 public:
     // Constructor
+    Broker() {}
     Broker(const string& name, const string& licenseNumber, double commissionRate)
         : name(name), licenseNumber(licenseNumber), commissionRate(commissionRate) {}
 
