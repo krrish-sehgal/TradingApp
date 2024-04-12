@@ -7,7 +7,12 @@ struct PortfolioEntry {
     double price;
     double avgprice;//also used for setting invested price 
 };
-
+void reset()
+{cout<<"\033[0m";}
+void red()//red
+{cout<<"\033[0;31m";}
+void green()
+{cout<<"\033[0;32m";}
 class Investor : public User {
     
 private:
@@ -16,7 +21,7 @@ private:
     double balance;
     unordered_map<string,PortfolioEntry > portfolio; // Map symbol to quantity
  double generateRandomPrice() {
-        
+        // srand(time(null));
         // Generate a random price between 100 and 200 for demonstration
         return 100 + (rand() % 90) + static_cast<double>(rand() % 100) / 100;
     }
