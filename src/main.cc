@@ -2,18 +2,20 @@
 #include "../Models/user/User.h"
 #include "../Models/investor/1_investor.h"
 #include "../Models/broker/Broker.h"    
-#include "mysql-connector/include/mysql/jdbc.h"
+#include "1_brokerLogin.h"    
+#include "2_brokerSignup.h"    
+
 
 using namespace std;
 
 int main() {
 
     bool running = true;
-    Broker* users = new Broker[1000];
+    Broker* brokers = new Broker[1000];
     Investor* investors = new Investor[1000];
     int brokerPtr = 0;
-    int userPtr = 0;
-
+    int investorPtr = 0;
+ 
     while (running) {
         cout << "Welcome to the Trading Simulation Application\n";
         cout << "1. Broker\n";
@@ -26,40 +28,26 @@ int main() {
         int pass ; 
         string mail;
         if (option == 1) {
-            cout << "You chose Broker\n";
+            cout << "You chose Broker\n";  
             cout << "1.Login" << endl << "2.SignUp" << endl;
             cin >> option;
             if(option==1){
-                cout << "Enter your email: ";
-                cin >> mail;
-                cout << "Enter your password: ";
-                cin >> pass;
-                // Add broker functionality here
+                brokerLogin(brokers,brokerPtr);
             }
             else if(option==2){
-                cout << "Enter your email: ";
-                cin >> mail;
-                cout << "Enter your password: ";
-                cin >> pass;
-                cout << "Enter your name: ";
-                string name;
-                cin >> name;
-                cout << "Enter your license number: ";
-                string licenseNumber;
-                cin >> licenseNumber;
-                cout << "Enter your commission rate: ";
-                double commissionRate;
-                cin >> commissionRate;
-                users[brokerPtr] = Broker(name, licenseNumber, commissionRate);
-                brokerPtr++;
+               brokerSignup(brokers,brokerPtr);
             }
             
-
-            // Add broker functionality here
         } else if (option == 2) {
-            cout << "You chose Investor\n";
-
-            // Add normal user functionality here
+            cout << "You Investor\n";
+            cout << "1.Login" << endl << "2.SignUp" << endl;
+            cin >> option;
+            if(option==1){
+                investorLogin(investors,investorPtr);
+            }
+            else if(option==2){
+               investorSignup(investors,investorPtr);
+            }
         } else if (option == 3) {
             cout << "Exiting...\n";
             running = false;
