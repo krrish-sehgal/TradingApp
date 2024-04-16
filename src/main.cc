@@ -9,9 +9,13 @@
 using namespace std;
 
 int main() {
-    User u;
-    bool running = true;
 
+    bool running = true;
+    Broker* brokers = new Broker[1000];
+    Investor* investors = new Investor[1000];
+    int brokerPtr = 0;
+    int investorPtr = 0;
+ 
     while (running) {
         cout << "Welcome to the Trading Simulation Application\n";
         cout << "1. Broker\n";
@@ -21,15 +25,29 @@ int main() {
 
         int option;
         cin >> option;
-
+        int pass ; 
+        string mail;
         if (option == 1) {
-            cout << "You chose Broker\n";
+            cout << "You chose Broker\n";  
+            cout << "1.Login" << endl << "2.SignUp" << endl;
+            cin >> option;
+            if(option==1){
+                brokerLogin(brokers,brokerPtr);
+            }
+            else if(option==2){
+               brokerSignup(brokers,brokerPtr);
+            }
             
-            // Add broker functionality here
         } else if (option == 2) {
-            cout << "You chose Investor\n";
-            
-            // Add normal user functionality here
+            cout << "You Investor\n";
+            cout << "1.Login" << endl << "2.SignUp" << endl;
+            cin >> option;
+            if(option==1){
+                investorLogin(investors,investorPtr);
+            }
+            else if(option==2){
+               investorSignup(investors,investorPtr);
+            }
         } else if (option == 3) {
             cout << "Exiting...\n";
             running = false;
