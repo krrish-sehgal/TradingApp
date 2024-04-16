@@ -1,6 +1,7 @@
 #pragma once
 
 #include <bits/stdc++.h>
+#include<unordered_map>
 #include "../user/User.h"
 using namespace std;
 
@@ -27,7 +28,7 @@ class Investor : public User
 {
 
 private:
-    double invested;
+double totalpnl;    double invested;
     double balance;
     unordered_map<string, PortfolioEntry> portfolio; // Map symbol to quantity
     double generateRandomPrice()
@@ -66,5 +67,17 @@ public:
             cout << " - " << symbol << ": " << info.quantity << " shares, Price: $" << info.avgprice << endl;
         }
         cout << "Balance: $" << balance << endl;
+    }
+void displayUserInfo() const {
+        cout << "Name: " << username << ", Email: " << email << ", Balance: $" << balance << endl;
+    }
+    double gettotalpnl(){
+        return totalpnl;
+    }
+    double getbalance(){
+        return balance;
+    }
+    double getinvested(){
+        return invested;
     }
 };
