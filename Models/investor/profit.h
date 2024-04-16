@@ -3,7 +3,7 @@
 using namespace std;
 
 void Investor:: calculateProfit() {
-        double totalpnl=0;
+     totalpnl=0;
         cout << "Invested: $" << invested << endl;
         cout << "Profit/Loss for each share:" << endl;
         for (auto& entry : portfolio) {

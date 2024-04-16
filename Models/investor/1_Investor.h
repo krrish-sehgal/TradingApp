@@ -18,7 +18,7 @@ void green()
 class Investor : public User {
     
 private:
-
+double totalpnl;
  double invested;
     double balance;
     unordered_map<string,PortfolioEntry > portfolio; // Map symbol to quantity
@@ -53,6 +53,19 @@ public:
         }
         cout << "Balance: $" << balance << endl;
 
+    }
+ void displayUserInfo() {
+        cout << "Username: " << username << endl;
+        cout << "Email: " << email << endl;
+    }
+    double gettotalpnl(){
+        return totalpnl;
+    }
+    double getbalance(){
+        return balance;
+    }
+    double getinvested(){
+        return invested;
     }
 
 };
