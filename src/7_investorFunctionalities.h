@@ -15,18 +15,18 @@ void brokerFunctionalities(Investor&obj){
         cout << "\n\n1. Buy Stock\n2. Sell Stock\n3. Calculate Profit\n4.display portfolio\n 5. Exit\n";
         cin >> choice;
         if(choice==1){
-            string symbol;
+            string company;
             int quantity;
-            cout << "Enter symbol and quantity to buy: ";
-            cin >> symbol >> quantity;
-            obj.buyStock(symbol, quantity);
+            cout << "Enter company and quantity to buy: ";
+            cin >> company >> quantity;
+            obj.buyStock(company, quantity);
         }
         else if(choice==2){
-            string symbol;
+            string company;
             int quantity;
-            cout << "Enter symbol and quantity to sell: ";
-            cin >> symbol >> quantity;
-            obj.sellStock(symbol, quantity);
+            cout << "Enter company and quantity to sell: ";
+            cin >> company >> quantity;
+            obj.sellStock(company, quantity);
         }
         else if(choice==3){
             obj.calculateProfit();

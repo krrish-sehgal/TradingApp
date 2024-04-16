@@ -4,6 +4,8 @@
 #include "../Models/broker/1_Broker.h"    
 #include "1_brokerLogin.h"    
 #include "2_brokerSignup.h"    
+#include "5_investorLogin.h"    
+#include "6_investorSignup.h"    
 
 
 using namespace std;
@@ -19,7 +21,7 @@ int main() {
     while (running) {
         cout << "Welcome to the Trading Simulation Application\n";
         cout << "1. Broker\n";
-        cout << "2. Normal User\n";
+        cout << "2. Investor\n";
         cout << "3. Exit\n";
         cout << "Choose an option: ";
 
