@@ -46,5 +46,12 @@ public:
         cout << "License Number: " << licenseNumber << endl;
         cout << "Commission Rate: " << commissionRate << "%" << endl;
     }
+ void addClient(const  string& clientName,const  string& clientPassword,const  string& clientEmail,const  double& clientBalance) {}
+ void removeClient(int clientID) {}
+ void displayClients() {}
+ void displayClientInfo(int clientID) {}
+void addAmountToClientBalance(int clientID, double amount) {}
+ void displayClientportfolio(int clientID,const string& password) {}
+
     
 };
