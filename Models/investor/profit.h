@@ -1,5 +1,7 @@
+#pragma once
+
 #include<bits/stdc++.h>
-#include"1_investor.h"
+#include"1_Investor.h"
 using namespace std;
 
 void Investor:: calculateProfit() {
@@ -7,12 +9,12 @@ void Investor:: calculateProfit() {
         cout << "Invested: $" << invested << endl;
         cout << "Profit/Loss for each share:" << endl;
         for (auto& entry : portfolio) {
-            const string& symbol = entry.first;
+            const string& company = entry.first;
              PortfolioEntry& info = entry.second;
             double currentPrice = generateRandomPrice();
             //cout<<currentPrice;
             double profit = (currentPrice - info.price) * info.quantity;
-            cout << " -- " << symbol << ": Bought at $" << info.price << ",\n Current price $" << currentPrice<<"\n Quantity "<<info.quantity;
+            cout << " -- " << company << ": Bought at $" << info.price << ",\n Current price $" << currentPrice<<"\n Quantity "<<info.quantity;
       
       if(profit<=0)red(); else green();
        cout << "\n Profit/Loss: $" << profit << endl;

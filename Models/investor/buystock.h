@@ -1,32 +1,32 @@
 #pragma once
 #include <bits/stdc++.h>
-#include "1_investor.h"
+#include "1_Investor.h"
 
 using namespace std;
 
-void Investor::buyStock(const string &symbol, int quantity)
+void Investor::buyStock(const string &company, int quantity)
 {
     double price;
-    // Check if symbol exists in portfolio, if not add it with initial values
-    if (portfolio.find(symbol) == portfolio.end())
+    // Check if company exists in portfolio, if not add it with initial values
+    if (portfolio.find(company) == portfolio.end())
     {
         price = generateRandomPrice();
         balance -= (price * quantity);
         invested += (price * quantity);
-        portfolio[symbol].quantity = quantity;
-        portfolio[symbol].price = price;
-        portfolio[symbol].avgprice = price;
+        portfolio[company].quantity = quantity;
+        portfolio[company].price = price;
+        portfolio[company].avgprice = price;
     }
     else
     {
-        price = portfolio[symbol].price;
+        price = portfolio[company].price;
         balance -= (price * quantity);
         invested += (price * quantity);
-        // Update quantity if symbol already exists
-        int temp = portfolio[symbol].quantity;
-        portfolio[symbol].quantity += quantity;
-        portfolio[symbol].avgprice = (portfolio[symbol].avgprice * temp + quantity * price) / (quantity + temp);
-        // portfolio[symbol].avgprice=/quantity
+        // Update quantity if company already exists
+        int temp = portfolio[company].quantity;
+        portfolio[company].quantity += quantity;
+        portfolio[company].avgprice = (portfolio[company].avgprice * temp + quantity * price) / (quantity + temp);
+        // portfolio[company].avgprice=/quantity
     }
-    cout << "\nBought " << quantity << " shares of " << symbol << " at $" << price << " each" << endl;
+    cout << "\nBought " << quantity << " shares of " << company << " at $" << price << " each" << endl;
 }
