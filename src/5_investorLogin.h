@@ -1,13 +1,12 @@
-#pragma once
-
+#pragma once    
 #include<bits/stdc++.h>
 using namespace std;
-#include"../Models/broker/Broker.h"
-#include "./3_brokerFunctionalities.h"
+#include"../Models/investor/1_Investor.h"
+#include "./7_investorFunctionalities.h"
 
 
 // template<typename UserType>
-void brokerLogin(Broker* &arr, int &size) {
+void investorLogin(Investor* &arr, int &size) {
     string mail, pass;
     cout << "Enter your email: ";
     cin >> mail;
