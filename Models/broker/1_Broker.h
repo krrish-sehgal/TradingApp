@@ -57,10 +57,10 @@ public:
  void removeClient(int clientID) {}
  void displayClients() {
      for (const auto& entry : clients) {
-            const int& ID = entry.first;
-            const Investor& obj = entry.second;
-            cout << " - " << ID << "\n" << obj.displayUserInfo()<<endl;
-        }
+        const int& ID = entry.first;
+        const Investor& obj = entry.second;
+        cout << " - Client ID: " << ID << endl;
+        obj.displayUserInfo();}
  }
  void displayClientInfo(int ID) {
    if(clients.find(ID) == clients.end()){

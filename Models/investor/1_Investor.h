@@ -1,6 +1,7 @@
 #pragma once
 
 #include<bits/stdc++.h>
+#include<unordered_map>
 #include"../user/User.h"
 using namespace std;
 
@@ -54,9 +55,8 @@ public:
         cout << "Balance: $" << balance << endl;
 
     }
- void displayUserInfo() {
-        cout << "Username: " << username << endl;
-        cout << "Email: " << email << endl;
+void displayUserInfo() const {
+        cout << "Name: " << username << ", Email: " << email << ", Balance: $" << balance << endl;
     }
     double gettotalpnl(){
         return totalpnl;

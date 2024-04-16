@@ -13,21 +13,20 @@ protected:
 public:
     // Constructor
     User() {}
-    User(const string& username,const string& password,const string& email)
-        : username(username),password(password), email(email) {}
+    User(const string& username,const string& password,const string& email): username(username),password(password), email(email) {}
 
     // Virtual destructor
     virtual ~User() {}
 
     // Getter methods
-    string getUsername() const {
+    string getUsername() {
         return username;
     }
 
-    string getEmail() const {
+    string getEmail() {
         return email;
     }
-string getPassword() const {
+string getPassword(){
         return password;
     }
     // Virtual function to display user information
