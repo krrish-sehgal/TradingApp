@@ -4,37 +4,44 @@
 using namespace std;
 #include"../Models/broker/1_Broker.h"
 
+
 void brokerFunctionalities(Broker&obj){
     cout << "Welcome " << obj.getName() << endl;
-    cout << "1. Add stock" << endl;
-    cout << "2. Remove stock" << endl;
-    cout << "3. Update stock" << endl;
-    cout << "4. View all stocks" << endl;
-    cout << "5. View all investors" << endl;
-    cout << "6. View all transactions" << endl;
-    cout << "7. Exit" << endl;
-    int choice;
+    cout << "1. Display Client list" << endl;
+    cout << "2. Add client " << endl;
+    cout << "3. Remove client" << endl;
+    cout << "4. Open Client Id" << endl;
+    cout << "5. Display all client info" << endl;
+    cout << "6. Exit" << endl;
+    int choice;int ID; string pass;
     cin >> choice;
     switch(choice){
         case 1:
-            obj.addStock();
+            obj.displayListClients();
             break;
         case 2:
-            obj.removeStock();
+        //addclient
             break;
         case 3:
-            obj.updateStock();
+        cout<<"enter id"<<endl;
+          cin>>ID;
+            obj.removeClient(ID);
             break;
         case 4:
-            obj.viewAllStocks();
+        cout<<"enter id"<<endl;
+       
+        cout<<"Enter Id";
+        cin>>ID;
+        cout<<"Enter Password";
+        cin>>pass;
+            obj.openclientid(ID,pass);
             break;
         case 5:
-            obj.viewAllInvestors();
+        cout<<"Enter Id";
+        cin>>ID;
+            obj.displayClientInfo(ID);
             break;
         case 6:
-            obj.viewAllTransactions();
-            break;
-        case 7:
             cout << "Exiting..." << endl;
             break;
         default:

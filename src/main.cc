@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../Models/user/User.h"
-#include "../Models/investor/1_investor.h"
+#include "../Models/investor/1_Investor.h"
 #include "../Models/broker/1_Broker.h"    
 #include "1_brokerLogin.h"    
 #include "2_brokerSignup.h"    

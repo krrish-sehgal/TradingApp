@@ -5,7 +5,7 @@
 #include"../investor/1_Investor.h"
 using namespace std;
 class Broker:public User {
-private:
+protected:
 
     string name;
     string licenseNumber;
@@ -56,28 +56,10 @@ public:
         cout << "Commission Rate: " << commissionRate << "%" << endl;
     }
  void addClient(const  string& ,const  string& ,const  string& ,const  double& );
- 
- void removeClient(int );
-        
- void displayClients() {
-     for (const auto& entry : clients) {
-        const int& ID = entry.first;
-        const Investor& obj = entry.second;
-        cout << " - Client ID: " << ID << endl;
-        obj.displayUserInfo();}
- }
- void displayClientInfo(int ID) {
-   if(clients.find(ID) == clients.end()){
-       cout<<"Client not found"<<endl;
-   }
-   else{
-        cout<<"ID:"<<ID;
-        clients[ID].displayUserInfo();
-        cout<<"\nBalance"<<clients[ID].getbalance()<<endl;
-        cout<<"\nInvested"<<clients[ID].getinvested()<<endl;
-        cout<<"\nTotal PnL\n"<<clients[ID].gettotalpnl()<<endl;
-   }
- }
+ void removeClient(int );   
+ void displayListClients();
+ void displayClientInfo(int );
+ void openclientid(int ,const string& ) ;
 void addAmountToClientBalance(int ID, double amount) {
     if(clients.find(ID) == clients.end()){
         cout<<"Client not found"<<endl;
@@ -86,17 +68,5 @@ void addAmountToClientBalance(int ID, double amount) {
     clients[ID].addbalance(amount);
    }
 }
- void openclientid(int ID,const string& pass) {
-     if(clients.find(ID) == clients.end()||clients[ID].getPassword()!=pass){
-       cout<<"Client not found or invalid passoword "<<endl;
-   }
-   else{
-
-
-    // menu for investor fucntionalities to be added
-    clients[ID].displayPortfolio(); //add investor functionalities here 
-   }
- }
-
 
 };

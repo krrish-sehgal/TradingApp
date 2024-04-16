@@ -18,16 +18,11 @@ class PortfolioEntry
 class Investor : public User
 {
 
-private:
+protected:
 double totalpnl;    double invested;
     double balance;
     unordered_map<string, PortfolioEntry> portfolio; // Map company to quantity
-    double generateRandomPrice()
-    {
-        // srand(time(null));
-        // Generate a random price between 100 and 200 for demonstration
-        return 100 + (rand() % 90) + static_cast<double>(rand() % 100) / 100;
-    }
+    double generateRandomPrice();
 
 public:
     Investor() {}
@@ -39,30 +34,14 @@ public:
 
     void calculateProfit();
     // Function to sell a stock
-    void sellStock(const string &company, int quantity);
+    void sellStock(const string &, int );
 
-    void addbalance(double amount)
-    {
-        cout << "\nCurrent Balance:$" << balance;
-        balance += amount;
-        cout << "\nNew Balance:$" << balance;
-    }
+    void addbalance(double );
     // Function to display user's portfolio
-    void displayPortfolio()
-    {
-        cout << "Portfolio for user " << getName() << ":" << endl;
-        for (const auto &entry : portfolio)
-        {
-            const string &company = entry.first;
-            const PortfolioEntry &info = entry.second;
-            cout << " - " << company << ": " << info.quantity << " shares, Price: $" << info.avgprice << endl;
-        }
-        cout << "Balance: $" << balance << endl;
-    }
+    void displayPortfolio();
     void displayUserInfo() const {
         cout << "Name: " << username << ", Email: " << email << ", Balance: $" << balance << endl;
     }
-    
     double gettotalpnl(){
         return totalpnl;
     }
