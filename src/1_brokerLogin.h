@@ -14,14 +14,16 @@ void brokerLogin(vector<Broker*>&arr, vector<Investor*>&masterInvestorsArr) {
     cin >> mail;
     cout << "Enter your password: ";
     cin >> pass;
+    int flag = 1;
     for (int i = 0; i < size; i++) {
         if (arr[i]->getMail() == mail && arr[i]->getPass() == pass) {
             cout << endl << "Login successful!" << endl;
             cout << endl << "Welcome " << arr[i]->getName() << endl;
             brokerFunctionalities(*arr[i], masterInvestorsArr);
+            flag = 0;
             break;
         }
 
     }
-    cout << " User not found , Try again";
+    if(flag) cout << " User not found , Try again";
 }
