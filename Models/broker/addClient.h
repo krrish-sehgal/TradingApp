@@ -4,8 +4,8 @@
 #include"1_Broker.h"
 using namespace std;
 void Broker::addClient(const  string& clientName,const  string& clientPassword,const  string& clientEmail,const  double& clientBalance) {
-    Investor newclient(clientName,clientPassword,clientEmail,clientBalance);
-    clients[clientID]=newclient;
+    Investor *newclient = new Investor(clientName,clientPassword,clientEmail,clientBalance);
+    clients[clientID]=*newclient;
     clientCount++;
     clientID++;
     earning+=(commissionRate/100)*clientBalance;

@@ -13,30 +13,26 @@ using namespace std;
 
 
 void investorFunctionalities(Investor&obj){
+    initialiseOptions();
     int choice;
     while(true){
-        cout << "\n\n1.display options\n2.Buy Stock\n3.Sell Stock\n4.Calculate Profit\n5.Display Portfolio\n6.Add Balance\n7.Exit\n";
-
+        cout << "\n\n1.display options\n2.Display Portfolio\n3.Display UserInfo\n4.Add Balance\n5.Exit\n";
+        
         cin >> choice;
         if(choice==1){
-            string company;
-            int quantity;
-            cout << "Enter company and quantity to buy: ";
-            cin >> company >> quantity;
-            obj.buyStock(company, quantity);
+            displayOptions(obj);
         }
         else if(choice==2){
-            string company;
-            int quantity;
-            cout << "Enter company and quantity to sell: ";
-            cin >> company >> quantity;
-            obj.sellStock(company, quantity);
+            obj.displayPortfolio();
         }
         else if(choice==3){
-            obj.calculateProfit();
+            obj.displayUserInfo();
         }
         else if(choice==4){
-            obj.displayPortfolio();
+            double amount;
+            cout << "Enter the amount to be added: ";
+            cin >> amount;
+            obj.addBalance(amount);
         }
         else if(choice==5){
             break;

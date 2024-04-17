@@ -16,8 +16,15 @@ void brokerSignup(vector<Broker*>&brokers){
     cin >> name;
     cout << "Enter your license number: ";
     cin >> licenseNumber;
-    cout << "Enter your commission rate: ";
+
+do {
+    cout << "Enter your commission rate (between 0 and 16): ";
     cin >> commissionRate;
+    if (commissionRate < 0 || commissionRate > 16) {
+        cout << "Invalid commission rate. Please enter a rate between 0 and 16." << endl;
+    }
+} while (commissionRate < 0 || commissionRate > 16);
+
 
     brokers.push_back(new  Broker(name, licenseNumber, commissionRate ,mail,pass) );
 }

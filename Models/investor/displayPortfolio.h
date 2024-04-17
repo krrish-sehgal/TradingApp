@@ -5,7 +5,7 @@
 using namespace std;
 
 void Investor::displayPortfolio(){
-        cout << "Portfolio for user: " << getName() << ":" << endl;
+        cout << "Portfolio of " << getName() << ":" << endl;
         for (const auto &entry : portfolio)
         {
             const string &company = entry.first;

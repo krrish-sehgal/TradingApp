@@ -20,5 +20,5 @@ void investorLogin(vector<Investor*> &arr) {
             break;
         }
     }
-    cout << " User not found , Try again";  
+    cout << " User not found , Try again" << endl;  
 }

@@ -9,14 +9,13 @@ using namespace std;
 class Broker:public User {
 protected:
 
-
     string licenseNumber;
     double commissionRate;
     unordered_map<int, Investor> clients; 
     unordered_map<int,double> transaction;
     int clientCount ; // Track the number of clients
     int clientID; // Track the client ID
-double earning;
+
 public:
     // Constructor
     Broker() {}
@@ -44,11 +43,7 @@ public:
     }
 
     // Function to display broker information
-    void displayBrokerInfo() const {
-        cout << "Broker Name: " << username << endl;
-        cout << "License Number: " << licenseNumber << endl;
-        cout << "Commission Rate: " << commissionRate << "%" << endl;
-    }
+void displayBrokerInfo();
  void addClient(const  string& ,const  string& ,const  string& ,const  double& );
  void removeClient(int );   
  void displayListClients();
@@ -63,6 +58,7 @@ void addAmountToClientBalance(int ID, double amount) {
     clients[ID].addbalance(amount);
    }
 }
+void addAmountToClientBalance(int , double );
 
 };
 #include"./addClient.h"
@@ -70,3 +66,5 @@ void addAmountToClientBalance(int ID, double amount) {
 #include"./displayListClients.h"
 #include"./openClientid.h"
 #include"./removeClient.h"
+#include"./addAmountToClientBalance.h"
+#include"./displayBrokerInfo.h"

@@ -3,7 +3,7 @@
 #include "1_Investor.h"
 
 using namespace std;
-void Investor::addbalance(double amount){
+void Investor::addBalance(double amount){
  cout << "\nCurrent Balance:$" << balance;
         balance += amount;
         cout << "\nNew Balance:$" << balance;
