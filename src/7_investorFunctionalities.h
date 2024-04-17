@@ -12,14 +12,11 @@ using namespace std;
 #include"../Models/investor/colors.h"
 
 
-
-
 void investorFunctionalities(Investor&obj){
     int choice;
     while(true){
-        cout << "\n\n1.display options\n2.exit";
+        cout << "\n\n1.display options\n2.Buy Stock\n3.Sell Stock\n4.Calculate Profit\n5.Display Portfolio\n6.Add Balance\n7.Exit\n";
 
-        cout << "\n\n1. Buy Stock\n2. Sell Stock\n3. Calculate Profit\n4. Display Portfolio\n5. Exit\n";
         cin >> choice;
         if(choice==1){
             string company;
