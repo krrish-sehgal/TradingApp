@@ -8,5 +8,6 @@ void Broker::addClient(const  string& clientName,const  string& clientPassword,c
     clients[clientID]=newclient;
     clientCount++;
     clientID++;
+    earning+=(commissionRate/100)*clientBalance;
     cout<<"\nClient added succesfully\n";
 } 

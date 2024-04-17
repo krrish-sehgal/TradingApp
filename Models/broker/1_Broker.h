@@ -13,9 +13,10 @@ protected:
     string licenseNumber;
     double commissionRate;
     unordered_map<int, Investor> clients; 
+    unordered_map<int,double> transaction;
     int clientCount ; // Track the number of clients
     int clientID; // Track the client ID
-
+double earning;
 public:
     // Constructor
     Broker() {}
@@ -58,6 +59,7 @@ void addAmountToClientBalance(int ID, double amount) {
         cout<<"Client not found"<<endl;
    }
    else{
+    transaction[ID]+=amount;
     clients[ID].addbalance(amount);
    }
 }
