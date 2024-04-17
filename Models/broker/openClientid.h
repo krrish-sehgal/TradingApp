@@ -11,6 +11,6 @@ void Broker::openclientid(int ID,string& pass) {
    else{
     cout << "This is the Client's portfolio" << endl;
     clients[ID]->displayPortfolio(); 
-    displayOptions(*clients[ID]);
+    displayOptions(*clients[ID],1,commissionRate);
    }
  }

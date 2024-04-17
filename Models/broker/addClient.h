@@ -15,6 +15,8 @@ void Broker::addClient(vector<Investor*> &masterInvestors) {
     double balance; 
     cin >> balance;
 
+    balance -= (commissionRate/100)*balance;
+    
     Investor *newClient = new Investor(name,mail,pass,balance);
     masterInvestors.push_back(newClient);
     // clientList.push_back(newClient);

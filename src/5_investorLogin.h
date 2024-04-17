@@ -13,6 +13,7 @@ void investorLogin(vector<Investor*> &arr) {
     cin >> mail;
     cout << "Enter your password: ";
     cin >> pass;
+    int flag = 1;
     for (int i = 0; i < size; i++) {
         if (arr[i]->getMail() == mail && arr[i]->getPass() == pass) {
             cout << "Login successful!" << endl;
@@ -20,5 +21,5 @@ void investorLogin(vector<Investor*> &arr) {
             break;
         }
     }
-    cout << " User not found , Try again" << endl;  
+    if(flag)cout << " User not found , Try again" << endl;  
 }

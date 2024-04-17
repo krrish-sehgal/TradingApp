@@ -14,3 +14,4 @@ void Investor::displayPortfolio(){
         }
         cout << "Balance: $" << balance << endl;
     }
+

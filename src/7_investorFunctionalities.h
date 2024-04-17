@@ -20,7 +20,7 @@ void investorFunctionalities(Investor&obj){
         
         cin >> choice;
         if(choice==1){
-            displayOptions(obj);
+            displayOptions(obj,0,0);
         }
         else if(choice==2){
             obj.displayPortfolio();
