@@ -27,12 +27,9 @@ public:
         return email;
     }
 
-    string getPass() const {
+    string getPass() {
         return password;
     }   
-string getPassword(){
-        return password;
-    }
     // Virtual function to display user information
     virtual void displayUserInfo() const {
         cout << "Username: " << username << endl;

@@ -23,7 +23,7 @@ double totalpnl;    double invested;
     double balance;
     unordered_map<string, PortfolioEntry> portfolio; // Map company to quantity
     double generateRandomPrice();
-
+ 
 public:
     Investor() {}
     Investor(const string &username, const string &email, const string &password, double balance)
@@ -39,9 +39,8 @@ public:
     void addbalance(double );
     // Function to display user's portfolio
     void displayPortfolio();
-    void displayUserInfo() const {
-        cout << "Name: " << username << ", Email: " << email << ", Balance: $" << balance << endl;
-    }
+    void displayUserInfo();
+
     double gettotalpnl(){
         return totalpnl;
     }
@@ -52,3 +51,11 @@ public:
         return invested;
     }
 };
+
+#include "buystock.h"
+#include "profit.h"
+#include "sellStock.h"
+#include "displayPortfolio.h"
+#include "generateRandomPrice.h"
+#include "addbalance.h"
+#include "displayUserInfo.h"

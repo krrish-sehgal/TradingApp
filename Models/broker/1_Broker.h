@@ -3,42 +3,35 @@
 #include<unordered_map>
 #include "../user/User.h"
 #include"../investor/1_Investor.h"
+
 using namespace std;
+
 class Broker:public User {
 protected:
 
-    string name;
+
     string licenseNumber;
     double commissionRate;
     unordered_map<int, Investor> clients; 
     int clientCount ; // Track the number of clients
-    int clientID;
+    int clientID; // Track the client ID
 
 public:
     // Constructor
     Broker() {}
-    Broker(const string& name, const string& licenseNumber, double commissionRate,string mail,string pass)
-        :User(name,password,email), name(name), licenseNumber(licenseNumber), commissionRate(commissionRate) {
+    Broker(string& name, string& licenseNumber, double commissionRate,string mail,string pass)
+        :User(name,mail,pass), licenseNumber(licenseNumber), commissionRate(commissionRate) {
             clientCount = 0; // Track the number of clients
-   clientID=0;
+            clientID = 0;
         }
 
     // Getter methods
-    string getName() const {
-        return name;
-    }
-
     string getLicenseNumber() const {
         return licenseNumber;
     }
 
     double getCommissionRate() const {
         return commissionRate;
-    }
-
-    // Setter methods
-    void setName(const string& newName) {
-        name = newName;
     }
 
     void setLicenseNumber(const string& newLicenseNumber) {
@@ -51,7 +44,7 @@ public:
 
     // Function to display broker information
     void displayBrokerInfo() const {
-        cout << "Broker Name: " << name << endl;
+        cout << "Broker Name: " << username << endl;
         cout << "License Number: " << licenseNumber << endl;
         cout << "Commission Rate: " << commissionRate << "%" << endl;
     }
@@ -59,7 +52,7 @@ public:
  void removeClient(int );   
  void displayListClients();
  void displayClientInfo(int );
- void openclientid(int ,const string& ) ;
+ void openclientid(int ,string& ) ;
 void addAmountToClientBalance(int ID, double amount) {
     if(clients.find(ID) == clients.end()){
         cout<<"Client not found"<<endl;
@@ -70,3 +63,8 @@ void addAmountToClientBalance(int ID, double amount) {
 }
 
 };
+#include"./addClient.h"
+#include"./displayClientInfo.h"
+#include"./displayListClients.h"
+#include"./openClientid.h"
+#include"./removeClient.h"

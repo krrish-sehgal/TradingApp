@@ -5,9 +5,10 @@
 using namespace std;
 void Broker::displayListClients()
 {
-     for (const auto& entry : clients) {
-        const int& ID = entry.first;
-        const Investor& obj = entry.second;
+     for (auto& entry : clients) {
+        int ID = entry.first;
+        Investor obj = entry.second;
         cout << " - Client ID: " << ID << endl;
-        obj.displayUserInfo();}
- }
+        obj.displayUserInfo();
+      }
+ } 
