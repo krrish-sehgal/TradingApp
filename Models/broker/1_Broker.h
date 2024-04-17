@@ -12,7 +12,6 @@ protected:
     string licenseNumber;
     double commissionRate;
     unordered_map<int, Investor> clients; 
-    unordered_map<int,double> transaction;
     int clientCount ; // Track the number of clients
     int clientID; // Track the client ID
 
@@ -49,15 +48,6 @@ void displayBrokerInfo();
  void displayListClients();
  void displayClientInfo(int );
  void openclientid(int ,string& ) ;
-void addAmountToClientBalance(int ID, double amount) {
-    if(clients.find(ID) == clients.end()){
-        cout<<"Client not found"<<endl;
-   }
-   else{
-    transaction[ID]+=amount;
-    clients[ID].addbalance(amount);
-   }
-}
 void addAmountToClientBalance(int , double );
 
 };
