@@ -11,6 +11,7 @@ void Investor :: sellStock(const string& company, int quantity){
             cout << "Not enough shares of " << company << " to sell" << endl;
             return;
         }
+        
         // Use current random price
         balance += quantity * portfolio[company].price;
         portfolio[company].quantity -= quantity;

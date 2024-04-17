@@ -21,17 +21,15 @@ int Investor::calculateProfit()
     {
         const string &company = entry.first;
         PortfolioEntry &info = entry.second;
-        double currentPrice = generateRandomPrice();
         // cout<<currentPrice;
-        double profit = (currentPrice - info.price) * info.quantity;
-        cout << " -- " << company << ": Bought at $" << info.price << ",\n Current price $" << currentPrice << "\n Quantity " << info.quantity;
+        double profit = (info.price - info.avgprice) * info.quantity;
+        cout << " -- " << company << ": Bought at $" << info.avgprice << ",\n Current price $" << info.price << "\n Quantity " << info.quantity;
 
         if (profit <= 0)
             red();
         else
             green();
         cout << "\n Profit/Loss: $" << profit << endl;
-        info.price = currentPrice;
         totalpnl += profit;
         reset();
     }
