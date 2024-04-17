@@ -3,10 +3,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 #include"../Models/broker/1_Broker.h"
+#include"../Models/investor/1_Investor.h"
 
 
 
-void brokerFunctionalities(Broker&obj){
+void brokerFunctionalities(Broker&obj,vector<Investor*> &masterInvestorsArr){
 
     int choice;
     do{
@@ -28,15 +29,7 @@ void brokerFunctionalities(Broker&obj){
             obj.displayListClients();
             break;
         case 2:
-            cout << "enter name" << endl;
-            cin >> name;
-            cout << "enter email" << endl;
-            cin >> email;
-            cout << "enter password" << endl;
-            cin >> password;
-            cout << "enter balance" << endl;
-            cin >> balance;
-            obj.addClient(name,email,password,balance);
+            obj.addClient(masterInvestorsArr);
 
             break;
         case 3:

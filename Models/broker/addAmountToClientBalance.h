@@ -8,6 +8,6 @@ void Broker::addAmountToClientBalance(int ID, double amount){
         cout<<"Client not found"<<endl;
    }
    else{
-    clients[ID].addBalance(amount);
+    clients[ID]->addBalance(amount);
    }
 }

@@ -11,16 +11,16 @@ protected:
 
     string licenseNumber;
     double commissionRate;
-    unordered_map<int, Investor> clients; 
-    int clientCount ; // Track the number of clients
+    unordered_map<int, Investor*> clients; 
     int clientID; // Track the client ID
+    vector<Investor*> clientList;
 
 public:
     // Constructor
     Broker() {}
     Broker(string& name, string& licenseNumber, double commissionRate,string mail,string pass)
         :User(name,mail,pass), licenseNumber(licenseNumber), commissionRate(commissionRate) {
-            clientCount = 0; // Track the number of clients
+
             clientID = 0;
         }
 
@@ -41,9 +41,9 @@ public:
         commissionRate = newCommissionRate;
     }
 
-    // Function to display broker information
+
 void displayBrokerInfo();
- void addClient(const  string& ,const  string& ,const  string& ,const  double& );
+ void addClient(vector<Investor*> &);
  void removeClient(int );   
  void displayListClients();
  void displayClientInfo(int );

@@ -4,12 +4,11 @@
 #include"1_Broker.h"
 using namespace std;
 void Broker::removeClient(int ID){
-    int removedCount = clients.erase(ID);
-    
-    if (removedCount == 0) {
-       cout << "Client not found." << endl;
-    } else {
-        cout << "Client removed successfully." << endl; 
-
+    if(clients.find(ID) == clients.end()){
+        cout<<"Client not found"<<endl;
     }
-}
+    else{
+        clients.erase(ID);
+        cout<<"Client removed"<<endl;
+    }
+} 
