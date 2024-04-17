@@ -14,10 +14,12 @@ using namespace std;
 
 
 
-void brokerFunctionalities(Investor&obj){
+void investorFunctionalities(Investor&obj){
     int choice;
     while(true){
-        cout << "\n\n1. Buy Stock\n2. Sell Stock\n3. Calculate Profit\n4.display portfolio\n 5. Exit\n";
+        cout << "\n\n1.display options\n2.exit";
+
+        cout << "\n\n1. Buy Stock\n2. Sell Stock\n3. Calculate Profit\n4. Display Portfolio\n5. Exit\n";
         cin >> choice;
         if(choice==1){
             string company;

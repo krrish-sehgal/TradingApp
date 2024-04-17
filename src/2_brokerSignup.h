@@ -4,7 +4,7 @@
 using namespace std;
 #include"../Models/broker/1_Broker.h"
 
-void brokerSignup(Broker* brokers, int&brokerPtr){
+void brokerSignup(vector<Broker*>&brokers){
     string name, mail, pass;
     string licenseNumber;
     double commissionRate;
@@ -18,6 +18,6 @@ void brokerSignup(Broker* brokers, int&brokerPtr){
     cin >> licenseNumber;
     cout << "Enter your commission rate: ";
     cin >> commissionRate;
-    brokers[brokerPtr] = Broker(name, licenseNumber, commissionRate ,mail,pass);
-    brokerPtr++;
+
+    brokers.push_back(new  Broker(name, licenseNumber, commissionRate ,mail,pass) );
 }

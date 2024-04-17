@@ -5,6 +5,7 @@ using namespace std;
 #include"../Models/broker/1_Broker.h"
 
 
+
 void brokerFunctionalities(Broker&obj){
     cout << "Welcome " << obj.getName() << endl;
     cout << "1. Display Client list" << endl;
@@ -28,17 +29,15 @@ void brokerFunctionalities(Broker&obj){
             obj.removeClient(ID);
             break;
         case 4:
-        cout<<"enter id"<<endl;
-       
-        cout<<"Enter Id";
-        cin>>ID;
-        cout<<"Enter Password";
-        cin>>pass;
+            cout<<"enter id"<<endl;
+            cin>>ID;
+            cout<<"Enter Password";
+            cin>>pass;
             obj.openclientid(ID,pass);
             break;
         case 5:
-        cout<<"Enter Id";
-        cin>>ID;
+            cout<<"Enter Id";
+            cin>>ID;
             obj.displayClientInfo(ID);
             break;
         case 6:

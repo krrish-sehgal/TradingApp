@@ -6,17 +6,19 @@ using namespace std;
 
 
 // template<typename UserType>
-void investorLogin(Investor* &arr, int &size) {
+void investorLogin(vector<Investor*> &arr) {
+    int size = arr.size();
     string mail, pass;
     cout << "Enter your email: ";
     cin >> mail;
     cout << "Enter your password: ";
     cin >> pass;
     for (int i = 0; i < size; i++) {
-        if (arr[i].getMail() == mail && arr[i].getPass() == pass) {
+        if (arr[i]->getMail() == mail && arr[i]->getPass() == pass) {
             cout << "Login successful!" << endl;
-            brokerFunctionalities(arr[i]);
+            investorFunctionalities(*arr[i]);
             break;
         }
     }
+    cout << " User not found , Try again";  
 }

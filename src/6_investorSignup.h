@@ -3,7 +3,7 @@
 using namespace std;
 #include"../Models/investor/1_Investor.h"
 
-void investorSignup(Investor* &investors, int&investorPtr){
+void investorSignup(vector<Investor*> &investors){
     string name, mail, pass;    
     cout << "Enter your email: ";
     cin >> mail;
@@ -15,6 +15,5 @@ void investorSignup(Investor* &investors, int&investorPtr){
     double balance; 
     cin >> balance;
 
-    investors[investorPtr] = Investor(name,mail,pass,balance);
-    investorPtr++;
+    investors.push_back(new Investor(name,mail,pass,balance));
 }

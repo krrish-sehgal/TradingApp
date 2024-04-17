@@ -13,10 +13,9 @@ using namespace std;
 int main() {
 
     bool running = true;
-    Broker* brokers = new Broker[1000];
-    Investor* investors = new Investor[1000];
-    int brokerPtr = 0;
-    int investorPtr = 0;
+
+    vector<Broker*> brokers;
+    vector<Investor*> investors;
  
     while (running) {
         cout << "Welcome to the Trading Simulation Application\n";
@@ -30,26 +29,34 @@ int main() {
         int pass ; 
         string mail;
         if (option == 1) {
-            cout << "You chose Broker\n";  
-            cout << "1.Login" << endl << "2.SignUp" << endl;
-            cin >> option;
-            if(option==1){
-                brokerLogin(brokers,brokerPtr);
-            }
-            else if(option==2){
-               brokerSignup(brokers,brokerPtr);
-            }
-            
+            do{
+                cout << "You chose Broker\n";  
+                cout << "1.Login" << endl << "2.SignUp" << endl  << "3.Exit" << endl;
+                cin >> option;
+                if(option==1){
+                    brokerLogin(brokers);
+                }
+                else if(option==2){
+                    brokerSignup(brokers);
+                }
+                else{
+                    cout << "Invalid option. Please choose again.\n";}
+            }while(option!=3);
         } else if (option == 2) {
-            cout << "You Investor\n";
-            cout << "1.Login" << endl << "2.SignUp" << endl;
-            cin >> option;
-            if(option==1){
-                investorLogin(investors,investorPtr);
-            }
-            else if(option==2){
-               investorSignup(investors,investorPtr);
-            }
+            do{
+                cout << "You are an Investor\n";
+                cout << "1.Login" << endl << "2.SignUp" << endl << "3.Exit" << endl;
+                cin >> option;
+                if(option==1){
+                    investorLogin(investors);
+                }
+                else if(option==2){
+                    investorSignup(investors);
+                }
+                else{
+                    cout << "Invalid option. Please choose again.\n";
+                }
+            }while(option!=3);
         } else if (option == 3) {
             cout << "Exiting...\n";
             running = false;
