@@ -34,7 +34,7 @@ int main() {
                 cout << "1.Login" << endl << "2.SignUp" << endl  << "3.Exit" << endl;
                 cin >> option;
                 if(option==1){
-                    brokerLogin(brokers);
+                    brokerLogin(brokers,investors);
                 }
                 else if(option==2){
                     brokerSignup(brokers);

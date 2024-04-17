@@ -7,7 +7,7 @@ using namespace std;
 
 
 // template<typename UserType>
-void brokerLogin(vector<Broker*>&arr) {
+void brokerLogin(vector<Broker*>&arr, vector<Investor*>&masterInvestorsArr) {
     int size = arr.size();
     string mail, pass;
     cout << "Enter your email: ";
@@ -18,7 +18,7 @@ void brokerLogin(vector<Broker*>&arr) {
         if (arr[i]->getMail() == mail && arr[i]->getPass() == pass) {
             cout << endl << "Login successful!" << endl;
             cout << endl << "Welcome " << arr[i]->getName() << endl;
-            brokerFunctionalities(*arr[i]);
+            brokerFunctionalities(*arr[i], masterInvestorsArr);
             break;
         }
 
