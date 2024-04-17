@@ -10,9 +10,9 @@ void Broker:: displayClientInfo(int ID) {
    }
    else{ 
       cout<<"ID:"<<ID;
-      clients[ID].displayUserInfo();
-      cout<<"\nBalance"<<clients[ID].getBalance()<<endl;
-      cout<<"\nInvested"<<clients[ID].getinvested()<<endl;
-      cout<<"\nTotal PnL\n"<<clients[ID].gettotalpnl()<<endl;
+      clients[ID]->displayUserInfo();
+      cout<<"\nBalance"<<clients[ID]->getBalance()<<endl;
+      cout<<"\nInvested"<<clients[ID]->getinvested()<<endl;
+      cout<<"\nTotal PnL\n"<<clients[ID]->gettotalpnl()<<endl;
    }
  }

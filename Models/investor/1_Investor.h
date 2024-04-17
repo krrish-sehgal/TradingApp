@@ -88,6 +88,7 @@ public:
 #include "displayUserInfo.h"
 
 void displayOptions(Investor &investor) {
+    initialiseOptions();
     int choice;
     do {
         shufflePrices(); // Shuffle prices before displaying options

@@ -11,8 +11,8 @@ void Broker::displayListClients()
    } 
      for (auto& entry : clients) {
         int ID = entry.first;
-        Investor obj = entry.second;
+        Investor*obj = entry.second;
         cout << " Client ID: " << ID << endl;
-        obj.displayUserInfo();
+        obj->displayUserInfo();
       }
  } 
