@@ -7,6 +7,9 @@ using namespace std;
 
 
 void brokerFunctionalities(Broker&obj){
+
+    int choice;
+    do{
     cout << "Welcome " << obj.getName() << endl;
     cout << "1. Display Client list" << endl;
     cout << "2. Add client " << endl;
@@ -14,18 +17,31 @@ void brokerFunctionalities(Broker&obj){
     cout << "4. Open Client Id" << endl;
     cout << "5. Display all client info" << endl;
     cout << "6. Exit" << endl;
-    int choice;int ID; string pass;
+    string name;
+    string email;
+    double balance;
+    string password;
+    int ID; string pass;
     cin >> choice;
     switch(choice){
         case 1:
             obj.displayListClients();
             break;
         case 2:
-        //addclient
+            cout << "enter name" << endl;
+            cin >> name;
+            cout << "enter email" << endl;
+            cin >> email;
+            cout << "enter password" << endl;
+            cin >> password;
+            cout << "enter balance" << endl;
+            cin >> balance;
+            obj.addClient(name,email,password,balance);
+
             break;
         case 3:
-        cout<<"enter id"<<endl;
-          cin>>ID;
+            cout<<"enter id"<<endl;
+            cin>>ID;
             obj.removeClient(ID);
             break;
         case 4:
@@ -46,4 +62,5 @@ void brokerFunctionalities(Broker&obj){
         default:
             cout << "Invalid choice" << endl;
     }
+    }while(choice!=6);
 }

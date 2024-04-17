@@ -16,8 +16,8 @@ void brokerLogin(vector<Broker*>&arr) {
     cin >> pass;
     for (int i = 0; i < size; i++) {
         if (arr[i]->getMail() == mail && arr[i]->getPass() == pass) {
-            cout << "Login successful!" << endl;
-            cout << "Welcome " << arr[i]->getName() << endl;
+            cout << endl << "Login successful!" << endl;
+            cout << endl << "Welcome " << arr[i]->getName() << endl;
             brokerFunctionalities(*arr[i]);
             break;
         }

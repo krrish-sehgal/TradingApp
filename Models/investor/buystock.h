@@ -1,16 +1,15 @@
 #pragma once
+
 #include <bits/stdc++.h>
 #include "1_Investor.h"
 
 using namespace std;
 
-void Investor::buyStock(const string &company, int quantity)
+void Investor::buyStock(const string &company, int quantity, double price)
 {
-    double price;
     // Check if company exists in portfolio, if not add it with initial values
     if (portfolio.find(company) == portfolio.end())
     {
-        price = generateRandomPrice();
         balance -= (price * quantity);
         invested += (price * quantity);
         portfolio[company].quantity = quantity;
@@ -19,14 +18,13 @@ void Investor::buyStock(const string &company, int quantity)
     }
     else
     {
-        price = portfolio[company].price;
+        double oldPrice = portfolio[company].price;
         balance -= (price * quantity);
         invested += (price * quantity);
         // Update quantity if company already exists
         int temp = portfolio[company].quantity;
         portfolio[company].quantity += quantity;
         portfolio[company].avgprice = (portfolio[company].avgprice * temp + quantity * price) / (quantity + temp);
-        // portfolio[company].avgprice=/quantity
     }
     cout << "\nBought " << quantity << " shares of " << company << " at $" << price << " each" << endl;
 }
