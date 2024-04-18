@@ -67,6 +67,9 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
             int index = currentIndex[companyName];
             double price = prices[index];
             
+            unordered_map<string , PortfolioEntry>&portfolio = investor.getPortfolio();
+            portfolio[companyName].price = price;
+
             if (choice == 1) {
                 int quantity;
                 cout << "Enter quantity: ";
@@ -80,8 +83,8 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
                     cout << endl << "Insufficient balance" << endl;
                 }
             } else { // choice == 2
-                if(!investor.calculateProfit()){
-                    break;
+                if(!investor.displayPNLforOneCompany(companyName)){
+                    continue;
                 };
 
                 int quantity;

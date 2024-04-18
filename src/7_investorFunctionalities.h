@@ -4,10 +4,8 @@
 using namespace std;
 #include"../Models/investor/1_Investor.h"
 #include"../Models/investor/buystock.h"
-#include"../Models/investor/profit.h"
 #include"../Models/investor/sellStock.h"
 #include"../Models/investor/displayPortfolio.h"
-#include"../Models/investor/generateRandomPrice.h"
 #include"../Models/investor/addbalance.h"
 #include"../Models/investor/colors.h"
 

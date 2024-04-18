@@ -32,14 +32,17 @@ public:
     // Function to buy a stock
     void buyStock(const string &, int , double);
 
-    int calculateProfit();
+    int displayPNLforOneCompany(string& );
     // Function to sell a stock
     void sellStock(const string &, int , int , int );
-
     void addBalance(double );
     // Function to display user's portfolio
-    void displayPortfolio();
+    int displayPortfolio();
     void displayUserInfo();
+
+    unordered_map<string , PortfolioEntry>& getPortfolio(){
+        return portfolio;
+    }
 
     double gettotalpnl(){
         return totalpnl;
@@ -53,10 +56,10 @@ public:
 };
 
 #include "buystock.h"
-#include "profit.h"
 #include "sellStock.h"
 #include "displayPortfolio.h"
 #include "addbalance.h"
 #include "displayUserInfo.h"
 #include "stockOptions.h"
+#include "displayPNLforOneCompany.h"
 

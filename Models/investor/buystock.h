@@ -27,4 +27,5 @@ void Investor::buyStock(const string &company, int quantity, double price)
         portfolio[company].avgprice = (portfolio[company].avgprice * temp + quantity * price) / (quantity + temp);
     }
     cout << "\nBought " << quantity << " shares of " << company << " at $" << price << " each" << endl;
+    displayPortfolio();
 }

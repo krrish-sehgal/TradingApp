@@ -14,8 +14,6 @@ void Broker::addClient(vector<Investor*> &masterInvestors) {
     cout << "Enter the amount to be added in the investing account: "; 
     double balance; 
     cin >> balance;
-
-    balance -= (commissionRate/100)*balance;
     
     Investor *newClient = new Investor(name,mail,pass,balance);
     masterInvestors.push_back(newClient);
