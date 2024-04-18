@@ -44,7 +44,10 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
             string name = names[i];
             double* prices = company[name];
             int index = currentIndex[name];
-            cout << i+1 << ". " << name << ": $" << prices[index] << endl;
+            double boughtAt = investor.getPortfolio()[name].avgprice;
+            cout << i+1 << ". " << name << ": $" << prices[index];
+            if( boughtAt)cout <<"    bought at" << boughtAt << endl;
+            else cout <<"    Not Bought"<< endl;
         }
 
         cout << "Enter 1 to buy stock" << endl;
@@ -84,14 +87,14 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
                     cout << endl << "Insufficient balance" << endl;
                 }
             } else { // choice == 2
-                if(!investor.displayPNLforOneCompany(companyName)){
-                    continue;
+                if(investor.displayPNLforOneCompany(companyName)){
+
+                    int quantity;
+                    cout << "Enter quantity: ";
+                    cin >> quantity;
+                    investor.sellStock(companyName, quantity,brokerFlag,commissionRate);
                 };
 
-                int quantity;
-                cout << "Enter quantity: ";
-                cin >> quantity;
-                investor.sellStock(companyName, quantity,brokerFlag,commissionRate);
             }
         } else if (choice == 3) {
             cout << "Exiting..." << endl;

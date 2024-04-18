@@ -11,17 +11,20 @@ int Investor::displayPNLforOneCompany(string& company){
     }
     double totalpnl = 0;
     PortfolioEntry& info = portfolio[company];
+    if(info.avgprice ==0){
+        cout << "Stocks havent been purchased yet" << endl;
+        return 0;
+    } 
 
+    cout << info.price << endl << info.avgprice << endl;
     double profit = (info.price - info.avgprice) * info.quantity;
-    cout << " -- " << company << ": Bought at $" <<  info.avgprice << " -- \n Current price $" << info.price<< "\n Quantity " << info.quantity ;
-
+    if(info.avgprice!=0) cout << " -- " << company << ": Bought at $" <<  info.avgprice<<"/share" << " -- \n Current price $" << info.price<< "/share"<< "\n Quantity " << info.quantity ;
     if (profit <= 0) red();
     else green();
 
     cout << "\n Profit/Loss: $" << profit << endl;
     totalpnl += profit;
-
+    reset();
     return 1;
 
-    
 }

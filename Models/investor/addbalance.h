@@ -4,7 +4,7 @@
 
 using namespace std;
 void Investor::addBalance(double amount){
- cout << "\nCurrent Balance:$" << balance;
+ cout << "\nPrevious Balance:$" << balance;
         balance += amount;
         cout << "\nNew Balance:$" << balance;
 }

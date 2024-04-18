@@ -9,8 +9,8 @@ class PortfolioEntry
 {
     public:
     int quantity;
-    double price;
-    double avgprice; // also used for setting invested price
+    double price;     // currentPrice
+    double avgprice; // bought price
 };
 
 #include "./colors.h"
