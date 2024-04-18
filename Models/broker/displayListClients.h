@@ -12,7 +12,10 @@ void Broker::displayListClients()
      for (auto& entry : clients) {
         int ID = entry.first;
         Investor*obj = entry.second;
+        if(obj->gettotalpnl()<0) red();
+        else green();
         cout << " Client ID: " << ID << endl;
         obj->displayUserInfo();
+        reset();
       }
  } 
