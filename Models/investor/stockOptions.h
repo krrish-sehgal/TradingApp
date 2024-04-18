@@ -1,5 +1,6 @@
 #pragma once
 #include<bits/stdc++.h>
+#include <random>
 #include "1_Investor.h"
 using namespace std;
 
@@ -37,7 +38,7 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
     initialiseOptions();
     int choice;
     do {
-        shufflePrices(); // Shuffle prices before displaying options
+      shufflePrices(); // Shuffle prices before displaying options
         cout << "Companies and Prices:" << endl;
         for (int i = 0; i < 3; i++) {
             string name = names[i];
