@@ -15,12 +15,14 @@ void Broker::openclientid(int ID, string &pass)
     cout << "This is the Client's portfolio" << endl;
     clients[ID]->displayPortfolio();
     int option;
+    double amount;
     do
     {
       cout << "1. Display Client Info" << endl
            << "2. Display Stock options" << endl
            << "3. Remove Client" << endl
-           << "4. Exit" << endl;
+           << "4. Add Balance" << endl
+           << "5. Exit" << endl;
       cin >> option;
 
       switch (option)
@@ -33,12 +35,17 @@ void Broker::openclientid(int ID, string &pass)
         break;
       case 3:
         removeClient(ID);
-        option = 4;
+        option = 5;
+        break;
+      case 4:
+        cout << "Enter amount to add" << endl;
+        cin >> amount;
+        clients[ID]->addBalance(amount);
         break;
       default:
         cout << "Invalid option. Please try again." << endl;
         break;
       }
-    } while (option != 4);
+    } while (option != 5);
   }
 }

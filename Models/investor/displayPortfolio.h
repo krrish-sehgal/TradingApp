@@ -7,10 +7,10 @@ using namespace std;
 int Investor::displayPortfolio()
 {
     if(portfolio.size()==0){
+    
         cout<<endl << "You havent bought any stocks yet" << endl;
         return 0;
     }
-
     totalpnl = 0;
     cout << endl << "Invested: $" << invested << endl;
     cout << "Profit/Loss for each share:" << endl;
@@ -20,7 +20,7 @@ int Investor::displayPortfolio()
     {
         const string &company = entry.first;
         PortfolioEntry &info = entry.second;
-        // cout<<currentPrice;
+
         double profit = (info.price - info.avgprice) * info.quantity;
         cout << " -- " << company << ": Bought at $" <<  info.avgprice << " -- \n Current price $" << info.price<< "\n Quantity " << info.quantity ;
 

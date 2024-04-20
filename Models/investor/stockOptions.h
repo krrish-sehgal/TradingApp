@@ -5,7 +5,9 @@
 using namespace std;
 
 
-string names[3] = {"AXIS BANK", "RELIANCE", "TATA MOTORS"};
+vector<string>names = {"AXIS BANK", "RELIANCE", "TATA MOTORS"};
+int totalCompanies = names.size();
+
 // Define the unordered_map for company prices
 unordered_map<string, double*> company;
 unordered_map<string, int> currentIndex;
@@ -44,7 +46,9 @@ void displayOptions(Investor &investor , int brokerFlag , int commissionRate) {
             string name = names[i];
             double* prices = company[name];
             int index = currentIndex[name];
-            double boughtAt = investor.getPortfolio()[name].avgprice;
+            unordered_map<string , PortfolioEntry>port = investor.getPortfolio();
+            double boughtAt =0;
+            if(port.find(name)!=port.end()) boughtAt = port[name].avgprice;
             cout << i+1 << ". " << name << ": $" << prices[index];
             if( boughtAt)cout <<"    bought at" << boughtAt << endl;
             else cout <<"    Not Bought"<< endl;

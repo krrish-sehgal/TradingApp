@@ -9,7 +9,7 @@ class PortfolioEntry
 {
     public:
     int quantity;
-    double price;     // currentPrice
+    double price;     // current
     double avgprice; // bought price
 };
 
@@ -22,7 +22,6 @@ protected:
 double totalpnl;    double invested;
     double balance;
     unordered_map<string, PortfolioEntry> portfolio; // Map company to quantity
-    double generateRandomPrice();
  
 public:
     Investor() {}
